@@ -9,6 +9,7 @@ const articlelist = r => require.ensure([], () => r(require('@/pages/articlelist
 const articleadd = r => require.ensure([], () => r(require('@/pages/articleadd')), 'articleadd');
 const memuset = r => require.ensure([], () => r(require('@/pages/memuset')), 'memuset');
 const menuadd = r => require.ensure([], () => r(require('@/pages/menuadd')), 'menuadd');
+const menuimage = r => require.ensure([], () => r(require('@/pages/menuimage')), 'menuimage');
 const website = r => require.ensure([], () => r(require('@/pages/website')), 'website');
 const webcookieclear = r => require.ensure([], () => r(require('@/pages/webcookieclear')), 'webcookieclear');
 const webpwd = r => require.ensure([], () => r(require('@/pages/webpwd')), 'webpwd');
@@ -44,6 +45,11 @@ export default new Router({
             path: '/menuadd',
             component: menuadd,
             meta: ['模块栏目', '添加栏目'],
+        },
+        {
+            path: '/menuimage',
+            component: menuimage,
+            meta: ['模块栏目', '文件管理'],
         },
         {
             path: '/website',
