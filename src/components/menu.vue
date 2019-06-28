@@ -2,9 +2,7 @@
 	<div class="manage_page fillcontain">
 		<el-row style="height: 100%;">
 			<el-col :span="4"  style="min-height: 100%; background-color: #324057;">
-				<el-menu :default-active="defaultActive" style="min-height: 100%;" theme="dark" router   background-color="#324057"
-      text-color="#fff"
-      active-text-color="#ffd04b">
+				<el-menu :default-active="defaultActive" style="min-height: 100%;" theme="dark" router   background-color="#324057" text-color="#fff" active-text-color="#ffd04b">
 					<el-menu-item index="home"><i class="el-icon-menu"></i>首页</el-menu-item>
 					<el-submenu index="2">
 						<template slot="title"><i class="el-icon-document"></i>内容管理</template>
@@ -49,3 +47,11 @@
 		},
 	}
 </script>
+<style>
+	.el-submenu .el-menu-item{
+		padding-left: 60px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 12px
+	}
+</style>

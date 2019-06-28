@@ -5,7 +5,7 @@
             <el-row :gutter="20">
                 <el-col :span="12" :offset="4">
                     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-                     <el-form-item label="栏目" prop="region">
+                       <el-form-item label="栏目" prop="region">
                         <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
                             <el-option label="前端" value="1"></el-option>
                             <el-option label="生活" value="2"></el-option>
@@ -41,39 +41,32 @@
                     <el-date-picker type="datetime" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
                 </el-form-item>
             </el-form-item>
-                   <!--  <el-form-item label="栏目" prop="type">
-                        <el-radio-group v-model="ruleForm.type">
-                            <el-radio label="前端" name="type"></el-radio>
-                            <el-radio label="生活" name="type"></el-radio>
-                            <el-radio label="安全" name="type"></el-radio>
-                            <el-radio label="其他" name="type"></el-radio>
-                        </el-radio-group>
-                    </el-form-item> -->
 
 
-                    <el-form-item label="内容" prop="desc">
 
-<div style="height: 410px;">
-    <quill-editor v-model="ruleForm.contents" ref="myQuillEditor" style="height: 300px;" >
-    </quill-editor>
-</div>
+            <el-form-item label="内容" prop="desc">
+
+                <div style="height: 410px;">
+                    <quill-editor v-model="ruleForm.contents" ref="myQuillEditor" style="height: 300px;" >
+                    </quill-editor>
+                </div>
 
 
 
 
 
 
-                  </el-form-item>
-                  <el-form-item label="置顶" prop="delivery">
-                    <el-switch v-model="ruleForm.delivery"></el-switch>
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" @click="submitForm('ruleForm')">确定</el-button>
-                    <el-button @click="resetForm('ruleForm')">重置</el-button>
-                </el-form-item>
-            </el-form>
-        </el-col>
-    </el-row>
+            </el-form-item>
+            <el-form-item label="置顶" prop="delivery">
+                <el-switch v-model="ruleForm.delivery"></el-switch>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="submitForm('ruleForm')">确定</el-button>
+                <el-button @click="resetForm('ruleForm')">重置</el-button>
+            </el-form-item>
+        </el-form>
+    </el-col>
+</el-row>
 </div>
 </div>
 </template>
@@ -90,19 +83,19 @@
         data() {
             return {
                 quillOption: quillConfig,
-              dialogImageUrl: '',
-              dialogVisible: false,
+                dialogImageUrl: '',
+                dialogVisible: false,
 
-              ruleForm: {
-                name: '',
-                region: '',
-                date1: '',
-                date2: '',
-                delivery: false,
-                type: [],
-                resource: '',
-                desc: '',
-                contents: ''
+                ruleForm: {
+                    name: '',
+                    region: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: '',
+                    contents: ''
                     // imageUrl,
                 },
                 rules: {
@@ -159,35 +152,10 @@
         }
     }
 </script>
-<style scoped>
+<style lang="less" scoped>
+@import '../style/mixin';
+.table_container{
+    margin: 20px;
 
-    /* @import "./quill.snow.css";*/
-
-avatar-uploader .el-upload {
-    border: 1px dashed #d9d9d9;
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
 }
-.avatar-uploader .el-upload:hover {
-    border-color: #409EFF;
-}
-.avatar-uploader-icon {
-    font-size: 28px;
-    color: #8c939d;
-    width: 178px;
-    height: 178px;
-    line-height: 178px;
-    text-align: center;
-}
-.avatar {
-    width: 178px;
-    height: 178px;
-    display: block;
-}
-.el-card__body{
-    padding: 0
-}
-
 </style>
